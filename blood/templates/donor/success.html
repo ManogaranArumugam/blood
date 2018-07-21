@@ -1,0 +1,35 @@
+
+{% block content %}
+    
+{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Portal</title>
+  
+</head>
+<body>
+<center>
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+        <p>Hello {{ request.user }}</p>
+        <br><br> <h2 style="color:#0fad00">You have successfully submitted details</h2>
+        
+        <p style="font-size:20px;color:#5C5C5C;">Thank you for donating your blood.</p>
+        <p> {{ name }} </p>
+
+        <p>
+    <button type="button">
+    <a href="{% url 'home' %}">Home</a>
+    </button>
+  </p>
+        
+    <br><br>
+        </div>
+        
+	</div>
+</div>
+</center>
+</body>
+</html>

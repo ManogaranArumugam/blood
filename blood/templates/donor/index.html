@@ -1,0 +1,85 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Room Booking Form Flat Responsive Widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Room Booking Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"> 
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Blood Donor</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Login/SignUp</a></li>
+
+        <!-- <li><a href="{% url 'login' %}">Login/SignUp</a></li>
+        uncomment this if you want login/singup option -->
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+	<div class="main">
+
+		<h1>Please Provide your Details</h1>
+		<div class="w3_agile_main_grids">
+		<form method="post" enctype="multipart/form-data" class="agile_form">
+		{% csrf_token %}
+    		<fieldset>
+    			<h3>Donors information</h3>
+    		    {% for field in form %}
+    		    {% if not forloop.counter|divisibleby:2 %}
+    		    <div class="form-group agileits_w3layouts_form w3_agileits_margin">
+    		    	
+    		    	 {{ field }} 
+    		    	
+    		    </div>
+    		    {% else %}
+    		    <div class="form-group agileits_w3layouts_form">
+					
+						{{ field }} 	
+					
+				</div>
+                 {% endif %}
+                {% endfor %}
+            </fieldset>
+    		<button type="submit">Submit</button>
+    	</form>
+    	</div>
+
+		
+				
+	</div>
+
+	<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/jquery.formtowizard.js' %}"></script>
+
+</body>
+</html>
